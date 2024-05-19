@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Signed In</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">You are Signed In</div>
+      <form action="/upload_documents" method="post">
+        <!-- Include email as a hidden field -->
+        <input type="hidden" name="email" value="{{ email }}" />
+        <div class="field">
+          <input type="text" name="Name" required />
+          <label>Full Name</label>
+        </div>
+        <div class="field">
+          <input type="number" name="Age" required />
+          <label>Age</label>
+        </div>
+        <div class="field">
+          <input type="number" name="Income" required />
+          <label>Income</label>
+        </div>
+        <div class="experience-container">
+          <div class="field">
+            <select name="ExperienceType" required>
+              <option value="" disabled selected></option>
+              <option value="Professional">Professional</option>
+              <option value="Academic">Academic</option>
+              <option value="Personal">Personal</option>
+            </select>
+            <label class="dropdown-label">Experience Type</label>
+          </div>
+          <div class="field">
+            <select name="ExperienceAmount" required>
+              <option value="" disabled selected></option>
+              <option value="Less than 1 year">Less than 1 year</option>
+              <option value="1-3 years">1-3 years</option>
+              <option value="3-5 years">3-5 years</option>
+              <option value="More than 5 years">More than 5 years</option>
+            </select>
+            <label class="dropdown-label">Experience Amount</label>
+          </div>
+        </div>
+        <div class="mycheck">
+          <input type="checkbox" name="house" />
+          <label>Are you looking for housing?</label>
+        </div>
+        <div class="mycheck">
+          <input type="checkbox" name="job" />
+          <label>Are you employed?</label>
+        </div>
+        <div class="field">
+          <input type="submit" value="Next" class="styled-button" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

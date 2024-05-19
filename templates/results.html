@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recommendations</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Recommendations</div>
+      <div class="content">
+        {% if category == "Houses" %}
+        <h2>Housing Opportunities</h2>
+        <ul>
+          {% for house in house_links %}
+          <li><a href="{{ house.link }}">{{ house.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% elif category == "Jobs" %}
+        <h2>Job Opportunities</h2>
+        <ul>
+          {% for job in job_links %}
+          <li><a href="{{ job.link }}">{{ job.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
